@@ -24,3 +24,10 @@ npm install react react-dom axios bootstrap
 
 ## Github Repo Link
 Link: https://github.com/mittalkeshav999/User-List-Management
+
+## For Login 
+User: eve.holt@reqres.in
+Password: cityslicka
+
+## Hosted on Vercel
+Link: https://user-list-management-eosin.vercel.app/

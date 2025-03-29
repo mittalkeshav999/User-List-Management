@@ -6,7 +6,7 @@ const UsersList = () => {
   const [users, setUsers] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [sortOrder, setSortOrder] = useState(""); // Sorting state
+  const [sortOrder, setSortOrder] = useState(""); 
   const [loading, setLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState("");
@@ -45,7 +45,6 @@ const UsersList = () => {
       user.last_name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // **Sorting Logic**
   if (sortOrder === "Ascending") {
     filteredUsers = filteredUsers.sort((a, b) =>
       (a.first_name + a.last_name).localeCompare(b.first_name + b.last_name)
@@ -58,7 +57,6 @@ const UsersList = () => {
 
   return (
     <div className="container mt-5">
-      {/* Search & Sorting */}
       <div className="d-flex align-items-center mb-3">
         <h2>User List</h2>
         <div className="mx-3">
@@ -72,7 +70,7 @@ const UsersList = () => {
         </div>
         <div>
           <select className="form-select" onChange={(e) => setSortOrder(e.target.value)}>
-            <option value="">Sort Order</option>
+            <option value="">Select Order</option>
             <option value="Ascending">Ascending</option>
             <option value="Descending">Descending</option>
           </select>
@@ -127,7 +125,6 @@ const UsersList = () => {
         <EditUser user={user} setUsers={setUsers} setIsOpen={setIsOpen} setUser={setUser} users={users} />
       )}
 
-      {/* Pagination Buttons */}
       <div className="d-flex justify-content-between mt-3">
         <button className="btn btn-primary" disabled={page <= 1} onClick={() => setPage(page - 1)}>
           Previous
